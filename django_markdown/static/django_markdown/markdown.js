@@ -56,8 +56,8 @@ miu = (function($){
          * */
         
         markupSet: [
-            {name:'First Level Heading', key:'1', placeHolder:'Your title here...', closeWith:function(markItUp) { return markdownTitle(markItUp, '=') }, className: 'miu-icon miu-icon-h1' },
-            {name:'Second Level Heading', key:'2', placeHolder:'Your title here...', closeWith:function(markItUp) { return markdownTitle(markItUp, '-') }, className: 'miu-icon miu-icon-h2' },
+            {name:'First Level Heading', key:'1', openWith:'# ', placeHolder:'Your title here...', className: 'miu-icon miu-icon-h1' },
+            {name:'Second Level Heading', key:'2',openWith:'## ', placeHolder:'Your title here...', className: 'miu-icon miu-icon-h2' },
             {name:'Heading 3', key:'3', openWith:'### ', placeHolder:'Your title here...', className: 'miu-icon miu-icon-h3' },
             {name:'Heading 4', key:'4', openWith:'#### ', placeHolder:'Your title here...', className: 'miu-icon miu-icon-h4' },
             {name:'Heading 5', key:'5', openWith:'##### ', placeHolder:'Your title here...', className: 'miu-icon miu-icon-h5' },
