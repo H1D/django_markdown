@@ -73,7 +73,8 @@ miu = (function($){
             {separator:'---------------' },
             {name:'Picture', key:'P', replaceWith:'![[![Alternative text]!]]([![Url:!:http://]!] "[![Title]!]")', className: 'miu-icon miu-icon-picture'},
             {name:'Link', key:'L', openWith:'[', closeWith:']([![Url:!:http://]!] "[![Title]!]")', placeHolder:'Your text to link here...', className: 'miu-icon miu-icon-link' },
-            {separator:'---------------'},  
+            {name:'Upload', key:'U',beforeInsert:function(markItUp){InlineUpload.display(markItUp,true)}},
+            {separator:'---------------'},
             {name:'Quotes', openWith:'> ', className: 'miu-icon miu-icon-quotes'},
             {name:'Code Block / Code', openWith:'(!(\t|!|`)!)', closeWith:'(!(`)!)', className: 'miu-icon miu-icon-code'},
             {separator:'---------------'},
@@ -87,7 +88,7 @@ miu = (function($){
     $('html').ajaxSend(function(event, xhr, settings) {
         var isLocal = !settings.url.match(/^https?:\/\/([^\/]+)/i);
         
-        if(isLocal || RegExp.$1 == document.location.host){
+        if(xhr['setRequestHeader'] && (isLocal || RegExp.$1 == document.location.host)){
             xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
         }
     });
@@ -172,7 +173,7 @@ miu = (function($){
             return textareaId ? editors[textareaId] : editors;
         },
                 
-        /*
+          /*
          * Shortcut for initializing editor
          * */
         init: function(textareaId, extraSettings){
@@ -180,7 +181,7 @@ miu = (function($){
                 editors[textareaId] = new Editor(textareaId, extraSettings);
             });
         }
-        
+
     }
-    
+
 })(jQuery || django.jQuery);

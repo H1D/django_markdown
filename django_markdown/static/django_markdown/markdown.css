@@ -18,4 +18,11 @@
 .miu-icon-list-numeric a { background-position: -726px 0; } 
 .miu-icon-picture a { background-position: -792px 0; } 
 .miu-icon-preview a { background-position: -858px 0; } 
-.miu-icon-quotes a { background-position: -924px 0; } 
+.miu-icon-quotes a { background-position: -924px 0; }
+
+.markItUpButton13 a	{background-image:url(images/picture_add.png);}
+.markItUpInlineUpload		{position: absolute;z-index: 100;width: 320px;	margin: 22px 0 0 40px;padding: 1em;	background-color: #EEE;border:3px solid #3C769D;border-top-color: #EEE;}
+.markItUpInlineUpload > div {position: relative; } /* for positioning "loading" image */
+.markItUpInlineUpload label	{float: left; clear: left;width: 4em; height: 2em;padding-right: .5em;font-size: 80%;font-weight: bold;color: #666;text-align: right;}
+#inline_upload_close		{float: right;width: 16px; height: 16px;margin-top: 4px;background: transparent url(images/cancel.png) 0 0 no-repeat;cursor: pointer;}
+#inline_upload_iframe 		{display: none; }

@@ -9,8 +9,11 @@ class MarkdownWidget(forms.Textarea):
 
     class Media:
         js = (
+            ( settings.STATIC_URL or settings.MEDIA_URL ) + 'django_markdown/jquery-1.6.1.min.js',
             ( settings.STATIC_URL or settings.MEDIA_URL ) + 'django_markdown/jquery.markitup.js',
             ( settings.STATIC_URL or settings.MEDIA_URL ) + 'django_markdown/markdown.js',
+            ( settings.STATIC_URL or settings.MEDIA_URL ) + 'django_markdown/InlineUpload.js',
+            ( settings.STATIC_URL or settings.MEDIA_URL ) + 'django_markdown/ajaxfileupload.js',
         )
         css = {
             'screen': (
